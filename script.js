@@ -54,4 +54,4 @@ function renderLinks() {
 }
 
 // 初始化背景
-document.body.style.background = bgColors[0];
+//document.body.style.background = bgColors[0];
