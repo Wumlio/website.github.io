@@ -161,3 +161,117 @@ button:hover {
     height: auto;
     display: block;
 }
+
+/* ===== 年度日历 ===== */
+.year-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 20px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.month-card {
+    background: rgba(255, 255, 255, 0.92);
+    color: #333;
+    border-radius: 14px;
+    padding: 14px;
+    text-align: left;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.month-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.month-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 2px dashed #ddd;
+}
+
+.month-icon { font-size: 22px; }
+
+.month-items {
+    list-style: none;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.month-items li::before {
+    content: "• ";
+    color: #888;
+}
+
+.month-items .empty {
+    color: #bbb;
+    font-style: italic;
+}
+
+.month-note {
+    margin-top: 8px;
+    font-size: 12px;
+    color: #666;
+    background: #fff8e1;
+    padding: 6px 8px;
+    border-radius: 8px;
+    border-left: 3px solid #ffc107;
+}
+
+/* 手机适配：一排两列 */
+@media (max-width: 700px) {
+    .year-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+
+/* ===== 工作分类标签 ===== */
+.work-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.work-tab {
+    padding: 10px 22px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.work-tab:hover {
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.work-tab.active {
+    background: #fff;
+    color: #333;
+    font-weight: bold;
+}
+
+.work-panel {
+    display: none;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.work-panel.active {
+    display: flex;
+}
