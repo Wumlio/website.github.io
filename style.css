@@ -2,12 +2,18 @@
 
 body {
     font-family: system-ui, sans-serif;
-    transition: background 0.5s ease;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     color: #fff;
+
+    /* 背景图片 */
+    background-image: url('1786188610083.png');
+    background-size: cover;        /* 铺满屏幕 */
+    background-position: center;   /* 居中 */
+    background-repeat: no-repeat;
+    background-attachment: fixed;  /* 滚动时背景不动 */
 }
 
 .page {
@@ -76,4 +82,37 @@ button:hover {
     color: #fff;
     font-size: 18px;
     text-decoration: underline;
+}
+.profile {
+    position: fixed;      /* 固定在顶部 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px 10px;
+    background: rgba(0, 0, 0, 0.4);  /* 半透明黑底，让文字看得清 */
+    backdrop-filter: blur(6px);       /* 毛玻璃效果 */
+    z-index: 10;
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;    /* 圆形头像 */
+    object-fit: cover;
+    border: 3px solid #fff;
+    margin-bottom: 8px;
+}
+
+.profile h1 {
+    font-size: 22px;
+    margin-bottom: 4px;
+}
+
+.profile p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+.page {
+    padding-top: 200px;  /* 根据头像高度调整 */
 }
