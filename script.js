@@ -9,6 +9,7 @@ function goToPage(pageId) {
 
 // 背景切换
 const bgColors = [
+    "url('1786188610083.png')",
     'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
     'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
     'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
@@ -20,6 +21,10 @@ let bgIndex = 0;
 function changeBg() {
     bgIndex = (bgIndex + 1) % bgColors.length;
     document.body.style.background = bgColors[bgIndex];
+    document.body.style.backgroundSize = 'cover';
+    document.body.style.backgroundPosition = 'center';
+    document.body.style.backgroundRepeat = 'no-repeat';
+    document.body.style.backgroundAttachment = 'fixed';
 }
 
 // 渲染书籍
