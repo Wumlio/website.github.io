@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>我的收藏夹</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="app">
+    <!-- 首页 -->
+    <div id="homepage" class="page active">
+        <h1>📚 我的数字小屋</h1>
+        <p>欢迎来到我的收藏世界</p>
+        <button onclick="goToPage('books')">📖 喜欢的书</button>
+        <button onclick="goToPage('images')">🖼️ 收藏的图片</button>
+        <button onclick="goToPage('links')">🔗 网址书签</button>
+        <button onclick="changeBg()">🎨 换个背景</button>
+    </div>
+
+    <!-- 书籍页 -->
+    <div id="books" class="page">
+        <h2>📖 我喜欢的书</h2>
+        <button class="back-btn" onclick="goToPage('homepage')">⬅ 返回首页</button>
+        <div id="book-list"></div>
+    </div>
+
+    <!-- 图片页 -->
+    <div id="images" class="page">
+        <h2>🖼️ 收藏的图片</h2>
+        <button class="back-btn" onclick="goToPage('homepage')">⬅ 返回首页</button>
+        <div id="image-grid"></div>
+    </div>
+
+    <!-- 链接页 -->
+    <div id="links" class="page">
+        <h2>🔗 网址书签</h2>
+        <button class="back-btn" onclick="goToPage('homepage')">⬅ 返回首页</button>
+        <ul id="link-list"></ul>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
