@@ -60,3 +60,84 @@ function renderLinks() {
 
 // 初始化背景
 //document.body.style.background = bgColors[0];
+
+// 渲染工作
+function renderWorks() {
+    const container = document.getElementById('work-list');
+    const types = Object.keys(myWorks);
+
+    // 三个分类标签
+    let html = '<div class="work-tabs">';
+    types.forEach((type, i) => {
+        html += `<button class="work-tab ${i === 0 ? 'active' : ''}" 
+                    onclick="showWorkTab('${type}', this)">${type}</button>`;
+    });
+    html += '</div>';
+
+    // 每个分类的内容
+    types.forEach((type, i) => {
+        html += `<div class="work-panel ${i === 0 ? 'active' : ''}" id="work-${type}">`;
+        html += myWorks[type].map(item => `
+            <div class="card">
+                <h3>${item.title}</h3>
+                <p>📅 ${item.date}</p>
+                <p><small>${item.note}</small></p>
+            </div>
+        `).join('');
+        html += '</div>';
+    });
+
+    container.innerHTML = html;
+}
+
+// 切换工作分类
+function showWorkTab(type, btn) {
+    document.querySelectorAll('.work-tab').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.work-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('work-' + type).classList.add('active');
+}
+
+// 渲染影视
+function renderMovies() {
+    const container = document.getElementById('movie-list');
+    container.innerHTML = myMovies.map(item => `
+        <div class="card">
+            <h3>${item.title}</h3>
+            <p>类型：${item.type}</p>
+            <p><small>${item.note}</small></p>
+        </div>
+    `).join('');
+}
+
+// 渲染年度清单
+function renderYearList() {
+    const container = document.getElementById('year-list');
+    container.innerHTML = `
+        <div class="year-grid">
+            ${myYearList.map(m => `
+                <div class="month-card">
+                    <div class="month-header">
+                        <span class="month-icon">${m.icon}</span>
+                        <span class="month-name">${m.month}</span>
+                    </div>
+                    <ul class="month-items">
+                        ${m.items.map(i => `<li>${i}</li>`).join('') || '<li class="empty">暂无计划</li>'}
+                    </ul>
+                    ${m.note ? `<div class="month-note">📝 ${m.note}</div>` : ''}
+                </div>
+            `).join('')}
+        </div>
+    `;
+}
+
+// 渲染学习
+function renderStudy() {
+    const container = document.getElementById('study-list');
+    container.innerHTML = myStudy.map(item => `
+        <div class="card">
+            <h3>${item.title}</h3>
+            <p>进度：${item.progress}</p>
+        </div>
+    `).join('');
+}
