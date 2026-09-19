@@ -84,15 +84,16 @@ button:hover {
     text-decoration: underline;
 }
 .profile {
-    position: fixed;      /* 固定在顶部 */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     text-align: center;
-    padding: 20px 10px;
-    background: rgba(0, 0, 0, 0.4);  /* 半透明黑底，让文字看得清 */
-    backdrop-filter: blur(6px);       /* 毛玻璃效果 */
+    padding: 20px 10px 15px;
+    background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.1) 100%);
+    backdrop-filter: blur(8px);
     z-index: 10;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
 }
 
 .avatar {
