@@ -117,3 +117,47 @@ button:hover {
 .page {
     padding-top: 200px;  /* 根据头像高度调整 */
 }
+
+/* ===== 贴纸基础样式 ===== */
+.sticker {
+    position: absolute;
+    font-size: 28px;
+    user-select: none;
+    pointer-events: none;   /* 不挡按钮点击 */
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+/* 每张贴纸的位置 */
+.sticker-1 { top: 20px;  left: 8%;  animation: float 3s ease-in-out infinite; }
+
+/* ===== 动画定义 ===== */
+
+/* 上下漂浮 */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-12px); }
+}
+
+/* 旋转 */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+/* 左右摇摆 */
+@keyframes swing {
+    0%, 100% { transform: rotate(-15deg); }
+    50%      { transform: rotate(15deg); }
+}
+
+/* 缩放脉动 */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.3); }
+}
+
+.sticker img {
+    width: 50px;
+    height: auto;
+    display: block;
+}
