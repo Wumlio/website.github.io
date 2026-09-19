@@ -16,10 +16,14 @@
     <div class="sticker sticker-2"><img src="./复古石膏像雕塑元素贴纸.png" alt="贴纸"></div>
 </header>
     <div id="homepage" class="page active">
-        <h1>📚 我的数字小屋</h1>
+        <h1>📚 我的地球oline存档处</h1>
         <p>欢迎来到我的收藏世界</p>
-        <button onclick="goToPage('books')">📖 喜欢的书</button>
-        <button onclick="goToPage('images')">🖼️ 收藏的图片</button>
+        <button onclick="goToPage('yearlist')">📋 年度清单</button>
+        <button onclick="goToPage('work')">💼 工作存档</button>
+        <button onclick="goToPage('study')">📚 学习存档</button>
+        <button onclick="goToPage('books')">📖 书籍存档</button>
+        <button onclick="goToPage('movies')">🎬 影视存档</button>
+        <button onclick="goToPage('images')">🖼️ 图片存档</button>
         <button onclick="goToPage('links')">🔗 网址书签</button>
         <button onclick="changeBg()">🎨 换个背景</button>
     </div>
@@ -45,6 +49,34 @@
         <ul id="link-list"></ul>
     </div>
 
+    <!-- 工作页 -->
+    <div id="work" class="page">
+        <h2>💼 工作</h2>
+        <button class="back-btn" onclick="goToPage('homepage')">⬅ 返回首页</button>
+        <div id="work-list"></div>
+    </div>
+
+    <!-- 影视页 -->
+    <div id="movies" class="page">
+        <h2>🎬 喜欢的影视</h2>
+        <button class="back-btn" onclick="goToPage('homepage')">⬅ 返回首页</button>
+        <div id="movie-list"></div>
+    </div>
+
+    <!-- 年度清单页 -->
+    <div id="yearlist" class="page">
+        <h2>📅 年度清单</h2>
+        <button class="back-btn" onclick="goToPage('homepage')">⬅ 返回首页</button>
+        <div id="year-list"></div>
+    </div>
+
+    <!-- 学习页 -->
+    <div id="study" class="page">
+        <h2>📚 学习</h2>
+        <button class="back-btn" onclick="goToPage('homepage')">⬅ 返回首页</button>
+        <div id="study-list"></div>
+    </div>
+    
     <script src="./data.js"></script>
     <script src="./script.js"></script>
 </body>
